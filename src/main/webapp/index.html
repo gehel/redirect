@@ -29,18 +29,18 @@
             <h1>Download images with redirect</h1>
             <div class="input-append">
                 <input name="iterations" type="text" placeholder="Number of images to download" />
-                <button class="btn">start test</button>
+                <button class="btn">start test (redirect)</button>
             </div>
-            <div class="result"></div>
+            <div>Time to download all images <span class="result"></span></div>
             <ol></ol>
         </div>
         <div id="direct" class="span6">
             <h1>Download images without redirect</h1>
             <div class="input-append">
                 <input name="iterations" type="text" placeholder="Number of images to download" />
-                <button class="btn">start test</button>
+                <button class="btn">start test (no redirect)</button>
             </div>
-            <div class="result"></div>
+            <div>Time to download all images <span class="result"></span></div>
             <ol></ol>
         </div>
     </div>
@@ -56,7 +56,7 @@
                 var img = new Image();
                 img.onload = function() {
                     endTime = (new Date()).getTime();
-                    context.find('div.result').html(endTime - startTime);
+                    context.find('.result').html(endTime - startTime);
                     context.find('ol').append($('<li></li>').append(this));
                 }
                 img.src = prefix + '/toto' + Math.random() + '.png';

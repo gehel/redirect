@@ -13,7 +13,8 @@
     <name>Redirect Demo</name>
 
     <description>
-        Demo of the cost of HTTP redirects.
+        Demo of the cost of HTTP redirects. You can test it on
+        http://redirect.ledcom.cloudbees.net/
     </description>
     <url>http://gehel.github.com/redirect/</url>
     <inceptionYear>2013</inceptionYear>
