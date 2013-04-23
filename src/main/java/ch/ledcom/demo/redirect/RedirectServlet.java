@@ -21,13 +21,14 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RedirectServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
-		String redirectUrl = getServletContext().getContextPath() + "/image" +req.getPathInfo();
-		resp.sendRedirect(redirectUrl);
-	}
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
+        String redirectUrl = getServletContext().getContextPath() + "/image"
+                + req.getPathInfo();
+        resp.sendRedirect(redirectUrl);
+    }
 
 }

@@ -11,6 +11,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Redirect Demo</name>
+
+    <description>
+        Demo of the cost of HTTP redirects.
+    </description>
+    <url>http://gehel.github.com/redirect/</url>
+    <inceptionYear>2013</inceptionYear>
+
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -24,4 +31,15 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/gehel/redirect/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/gehel/redirect.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/gehel/redirect.git</developerConnection>
+        <url>https://github.com/gehel/redirect</url>
+    </scm>
 </project>

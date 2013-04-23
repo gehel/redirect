@@ -27,29 +27,29 @@ import com.google.common.io.Resources;
 
 public class ImageServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private byte[] imageBytes;
+    private byte[] imageBytes;
 
-	@Override
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
-		Closer closer = Closer.create();
-		try {
-			InputStream imageStream = closer.register(loadImage());
-			ByteStreams.copy(imageStream, resp.getOutputStream());
-		} catch (Throwable t) {
-			throw closer.rethrow(t);
-		} finally {
-			closer.close();
-		}
-	}
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
+        Closer closer = Closer.create();
+        try {
+            InputStream imageStream = closer.register(loadImage());
+            ByteStreams.copy(imageStream, resp.getOutputStream());
+        } catch (Throwable t) {
+            throw closer.rethrow(t);
+        } finally {
+            closer.close();
+        }
+    }
 
-	private InputStream loadImage() throws IOException {
-		if (imageBytes == null) {
-			imageBytes = Resources.toByteArray(getClass().getClassLoader()
-					.getResource("test.png"));
-		}
-		return new ByteArrayInputStream(imageBytes);
-	}
+    private InputStream loadImage() throws IOException {
+        if (imageBytes == null) {
+            imageBytes = Resources.toByteArray(getClass().getClassLoader()
+                    .getResource("test.png"));
+        }
+        return new ByteArrayInputStream(imageBytes);
+    }
 }
